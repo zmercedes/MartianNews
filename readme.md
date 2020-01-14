@@ -2,7 +2,7 @@
 
 You've been assigned the task of creating a translation of the New York Times news reader application for the latest emerging market -- Mars!
 
-###The requirements for the application are the following:
+### The requirements for the application are the following:
 
 - It has to be a native application and no webviews should be used.
 
@@ -16,7 +16,7 @@ You've been assigned the task of creating a translation of the New York Times ne
 
 - Language selection should be persisted across runs.
 
-###The following translation rules apply for translating English to Martian:
+### The following translation rules apply for translating English to Martian:
 
 - All words greater than 3 characters should be translated to the word "boinga"
 
