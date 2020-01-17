@@ -14,12 +14,18 @@ class AppCoordinator: Coordinator {
         case articleList
     }
     
-    init(){
-        
+    private let window: UIWindow
+    private let rootViewController = UIViewController()
+    
+    init(window: UIWindow){
+        self.window = window
+        self.window.rootViewController = rootViewController
+        self.window.backgroundColor = .purple
+        self.window.makeKeyAndVisible()
     }
     
     func start(){
-        
+        navigate(to: .articleList)
     }
     
     internal func navigate(to destination: Destination) {
