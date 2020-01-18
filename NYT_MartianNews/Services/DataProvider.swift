@@ -37,8 +37,8 @@ class DataProvider {
                 let isTopImage = image["top_image"] as! Int
                 if(isTopImage == 1){
                     topImageUrl = image["url"] as! String
-                    dimensions[0] = image["height"] as! Int
-                    dimensions[1] = image["width"] as! Int
+                    dimensions[0] = image["width"] as! Int
+                    dimensions[1] = image["height"] as! Int
                 }
             }
             newArticles.append(Article(title: title, image: URL(string: topImageUrl)!, dimensions: dimensions, body: body))
