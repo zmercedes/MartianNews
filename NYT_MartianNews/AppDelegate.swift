@@ -13,10 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var appCoordinator: AppCoordinator?
+    var dependencies = Dependencies()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        appCoordinator = AppCoordinator(window: window!)
+        appCoordinator = AppCoordinator(window: window!, dependencies: dependencies)
         appCoordinator!.start()
         
         return true
