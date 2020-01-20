@@ -21,13 +21,22 @@ class UserSettings {
     
     init(userDefaults: UserDefaults = .standard){
         self.userDefaults = userDefaults
+        storeInfo(language: .English)
     }
     
-    func storeInfo(){
-        
+    func storeInfo(language: Languages){
+        saveValue(forKey: .language, value: language)
     }
     
-    private func saveValue(forKey key: Key, value: Any){
+    func getLanguage() -> Languages? {
+        return readValue(forKey: .language)
+    }
+    
+    private func saveValue(forKey key: Key, value: Languages){
         userDefaults.set(value, forKey: key.make())
+    }
+    
+    private func readValue<T>(forKey key: Key) -> T? {
+        return userDefaults.value(forKey: key.make()) as? T
     }
 }
