@@ -14,8 +14,16 @@ class ArticleListCoordinator: Coordinator {
         case selectedArticle
     }
     
+    private let dependencies: Dependencies
+    private let navigationController: UINavigationController
+    
+    init(dependencies: Dependencies, navigation: UINavigationController) {
+        self.dependencies = dependencies
+        self.navigationController = navigation
+    }
+    
     func start() {
-        
+        print("navigated to Article List")
     }
     
     func navigate(to destination: ArticleListCoordinator.Destination) {
