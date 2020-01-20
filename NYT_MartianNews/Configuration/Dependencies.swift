@@ -10,5 +10,5 @@ import Foundation
 
 open class Dependencies {
     private lazy var userSettings = UserSettings()
-    lazy var dataProvider = DataProvider()
+    lazy var dataProvider = DataProvider(settings: userSettings)
 }
