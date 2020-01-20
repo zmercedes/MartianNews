@@ -20,6 +20,7 @@
 		9D8156E123D4A1FF005280DD /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E023D4A1FF005280DD /* UserSettings.swift */; };
 		9D8156E323D62443005280DD /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E223D62443005280DD /* Languages.swift */; };
 		9D8156E623D62B5F005280DD /* ArticleListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E523D62B5F005280DD /* ArticleListCoordinator.swift */; };
+		9D8156E823D62F52005280DD /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E723D62F52005280DD /* Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		9D8156E023D4A1FF005280DD /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		9D8156E223D62443005280DD /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		9D8156E523D62B5F005280DD /* ArticleListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCoordinator.swift; sourceTree = "<group>"; };
+		9D8156E723D62F52005280DD /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				9D8156E023D4A1FF005280DD /* UserSettings.swift */,
 				9D8156E223D62443005280DD /* Languages.swift */,
+				9D8156E723D62F52005280DD /* Dependencies.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				9D1AE18323D2114600C85B5A /* DataProvider.swift in Sources */,
 				9D8156E123D4A1FF005280DD /* UserSettings.swift in Sources */,
 				9D1AE15123CE164D00C85B5A /* AppDelegate.swift in Sources */,
+				9D8156E823D62F52005280DD /* Dependencies.swift in Sources */,
 				9D1AE17B23CE616100C85B5A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
