@@ -9,7 +9,16 @@
 import Foundation
 
 class DataProvider {
+    
     var articles: [Article]?
+    var language: Languages = .English
+    
+    let userSettings: UserSettings
+    
+    init(settings: UserSettings){
+        self.userSettings = settings
+        fetchData()
+    }
     
     func fetchData(){
         articles = []
