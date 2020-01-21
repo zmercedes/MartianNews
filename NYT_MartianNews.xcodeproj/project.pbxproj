@@ -26,6 +26,7 @@
 		9D8156F223D675D4005280DD /* ArticleListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8156F023D675D4005280DD /* ArticleListView.xib */; };
 		9D8156F823D7407D005280DD /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156F623D7407D005280DD /* ArticleListCell.swift */; };
 		9D8156F923D7407D005280DD /* ArticleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8156F723D7407D005280DD /* ArticleListCell.xib */; };
+		9D8156FB23D75CBE005280DD /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156FA23D75CBE005280DD /* NibLoadableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		9D8156F023D675D4005280DD /* ArticleListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListView.xib; sourceTree = "<group>"; };
 		9D8156F623D7407D005280DD /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		9D8156F723D7407D005280DD /* ArticleListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListCell.xib; sourceTree = "<group>"; };
+		9D8156FA23D75CBE005280DD /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9D1AE17A23CE616100C85B5A /* Coordinator.swift */,
+				9D8156FA23D75CBE005280DD /* NibLoadableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 			files = (
 				9D1AE17D23CE6D0500C85B5A /* AppCoordinator.swift in Sources */,
 				9D8156E623D62B5F005280DD /* ArticleListCoordinator.swift in Sources */,
+				9D8156FB23D75CBE005280DD /* NibLoadableView.swift in Sources */,
 				9D8156E323D62443005280DD /* Languages.swift in Sources */,
 				9D1AE15323CE164D00C85B5A /* ViewController.swift in Sources */,
 				9D1AE18623D2150700C85B5A /* Article.swift in Sources */,
