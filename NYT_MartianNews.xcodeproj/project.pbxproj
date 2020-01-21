@@ -22,6 +22,8 @@
 		9D8156E623D62B5F005280DD /* ArticleListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E523D62B5F005280DD /* ArticleListCoordinator.swift */; };
 		9D8156E823D62F52005280DD /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E723D62F52005280DD /* Dependencies.swift */; };
 		9D8156EA23D65864005280DD /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E923D65864005280DD /* Dynamic.swift */; };
+		9D8156F123D675D4005280DD /* ArticleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156EF23D675D4005280DD /* ArticleListViewController.swift */; };
+		9D8156F223D675D4005280DD /* ArticleListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8156F023D675D4005280DD /* ArticleListView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		9D8156E523D62B5F005280DD /* ArticleListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCoordinator.swift; sourceTree = "<group>"; };
 		9D8156E723D62F52005280DD /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		9D8156E923D65864005280DD /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		9D8156EF23D675D4005280DD /* ArticleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewController.swift; sourceTree = "<group>"; };
+		9D8156F023D675D4005280DD /* ArticleListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				9D8156E523D62B5F005280DD /* ArticleListCoordinator.swift */,
+				9D8156EF23D675D4005280DD /* ArticleListViewController.swift */,
+				9D8156F023D675D4005280DD /* ArticleListView.xib */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1AE15B23CE165400C85B5A /* LaunchScreen.storyboard in Resources */,
+				9D8156F223D675D4005280DD /* ArticleListView.xib in Resources */,
 				9D1AE15823CE165400C85B5A /* Assets.xcassets in Resources */,
 				9D1AE15623CE164D00C85B5A /* Main.storyboard in Resources */,
 			);
@@ -297,6 +304,7 @@
 				9D8156E123D4A1FF005280DD /* UserSettings.swift in Sources */,
 				9D8156EA23D65864005280DD /* Dynamic.swift in Sources */,
 				9D1AE15123CE164D00C85B5A /* AppDelegate.swift in Sources */,
+				9D8156F123D675D4005280DD /* ArticleListViewController.swift in Sources */,
 				9D8156E823D62F52005280DD /* Dependencies.swift in Sources */,
 				9D1AE17B23CE616100C85B5A /* Coordinator.swift in Sources */,
 			);
