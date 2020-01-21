@@ -28,6 +28,7 @@
 		9D8156F923D7407D005280DD /* ArticleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8156F723D7407D005280DD /* ArticleListCell.xib */; };
 		9D8156FB23D75CBE005280DD /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156FA23D75CBE005280DD /* NibLoadableView.swift */; };
 		9D8156FD23D75D88005280DD /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156FC23D75D88005280DD /* ReusableView.swift */; };
+		9D8156FF23D75E53005280DD /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156FE23D75E53005280DD /* UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9D8156F723D7407D005280DD /* ArticleListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleListCell.xib; sourceTree = "<group>"; };
 		9D8156FA23D75CBE005280DD /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
 		9D8156FC23D75D88005280DD /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		9D8156FE23D75E53005280DD /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		9D1AE17223CE173F00C85B5A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				9D8156FE23D75E53005280DD /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				9D8156EA23D65864005280DD /* Dynamic.swift in Sources */,
 				9D1AE15123CE164D00C85B5A /* AppDelegate.swift in Sources */,
 				9D8156F123D675D4005280DD /* ArticleListViewController.swift in Sources */,
+				9D8156FF23D75E53005280DD /* UITableView.swift in Sources */,
 				9D8156E823D62F52005280DD /* Dependencies.swift in Sources */,
 				9D1AE17B23CE616100C85B5A /* Coordinator.swift in Sources */,
 			);
