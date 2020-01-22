@@ -21,7 +21,7 @@ class UserSettings {
     
     init(userDefaults: UserDefaults = .standard){
         self.userDefaults = userDefaults
-        saveValue(forKey: .language, value: .English)
+        if getLanguage() == nil { saveValue(forKey: .language, value: .English) }        
     }
     
     func storeInfo(language: Languages){
