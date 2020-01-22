@@ -11,10 +11,15 @@ import UIKit
 class ArticleListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var setupTable: (()-> Void)?
     
-    init() {
+    init(dataSource: ArticleListDataSource) {
         super.init(nibName: nil, bundle: nil)
-        
+        setupTable = {
+            self.tableView.dataSource = dataSource
+            self.tableView.register(ArticleListCell.self)
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -23,6 +28,7 @@ class ArticleListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTable!()
     }
 
 }
