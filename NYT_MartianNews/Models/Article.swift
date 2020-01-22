@@ -9,15 +9,15 @@
 import Foundation
 
 class Article {
-    let title: [String:String]
-    let imageURL: URL
+    let title: [Languages:String]
+    let imageURL: String
     let imageDimensions: [Int]
-    let body: [String:String]
+    let body: [Languages:String]
     
-    init(title: String, image: URL, dimensions: [Int], body: String){
-        self.title = ["English":title,"Martian":""]
+    init(title: String, image: String, dimensions: [Int], body: String){
+        self.title = [.English:title,.Martian:""]
         self.imageURL = image
         self.imageDimensions = dimensions
-        self.body = ["English":body, "Martian":""]
+        self.body = [.English:body, .Martian:""]
     }
 }
