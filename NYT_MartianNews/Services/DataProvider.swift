@@ -6,28 +6,42 @@
 //  Copyright © 2020 Zoilo Mercedes. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class DataProvider {
     
-    var articles: [Article]?
-    var language: Languages = .English
+    let articles = Dynamic<[Article]>([])
+    let language = Dynamic<Languages>(.English)
     
-    let userSettings: UserSettings
+    private let userSettings: UserSettings
+    private let disposeBag = DisposeBag()
     
     init(settings: UserSettings){
         self.userSettings = settings
         fetchData()
+        
+        language.observe { newlang in
+            if(self.userSettings.getLanguage() != newlang){
+                self.userSettings.storeInfo(language: newlang)
+            }
+        }.dispose(with: disposeBag)
+        
+        if let lang = self.userSettings.getLanguage(), language.value != lang {
+            self.changeLanguage(language: lang)
+        }
     }
     
     func fetchData(){
-        articles = []
         do {
             let data = try Data(contentsOf: URL(string: "https://s1.nyt.com/ios-newsreader/candidates/test/articles.json")!)
             decodeJson(data: data)
         } catch {
-            print("Unable to get data")
+            print("Unable to get data.")
         }
+    }
+    
+    func changeLanguage(language: Languages) {
+        self.language.value = language
     }
     
     private func decodeJson(data: Data){
@@ -50,9 +64,9 @@ class DataProvider {
                     dimensions[1] = image["height"] as! Int
                 }
             }
-            newArticles.append(Article(title: title, image: URL(string: topImageUrl)!, dimensions: dimensions, body: body))
+            newArticles.append(Article(title: title, image: topImageUrl, dimensions: dimensions, body: body))
         }
-        print(String(newArticles.count) + " new articles added.")
-        articles = newArticles
+        print("\(newArticles.count) new articles added.")
+        articles.value = newArticles
     }
 }
