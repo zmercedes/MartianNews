@@ -13,7 +13,7 @@ class UserSettings {
     enum Key: String {
         case language
         func make() -> String {
-            return self.rawValue + "_0"
+            return self.rawValue
         }
     }
     
@@ -21,7 +21,7 @@ class UserSettings {
     
     init(userDefaults: UserDefaults = .standard){
         self.userDefaults = userDefaults
-        storeInfo(language: .English)
+        saveValue(forKey: .language, value: .English)
     }
     
     func storeInfo(language: Languages){
@@ -33,7 +33,7 @@ class UserSettings {
     }
     
     private func saveValue(forKey key: Key, value: Languages){
-        userDefaults.set(value, forKey: key.make())
+        userDefaults.set(value.make(), forKey: key.make())
     }
     
     private func readValue<T>(forKey key: Key) -> T? {
