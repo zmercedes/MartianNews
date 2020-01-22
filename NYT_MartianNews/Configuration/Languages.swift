@@ -8,7 +8,10 @@
 
 import Foundation
 
-enum Languages{
+enum Languages: String {
     case English
     case Martian
+    func make() -> String {
+        return self.rawValue
+    }
 }
