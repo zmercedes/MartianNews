@@ -31,6 +31,8 @@
 		9D8156FF23D75E53005280DD /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156FE23D75E53005280DD /* UITableView.swift */; };
 		9D81570123D76026005280DD /* ArticleListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570023D76026005280DD /* ArticleListDataSource.swift */; };
 		9D81570323D79935005280DD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570223D79935005280DD /* ImageCache.swift */; };
+		9D81570623D8AF23005280DD /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570423D8AF23005280DD /* ArticleViewController.swift */; };
+		9D81570723D8AF23005280DD /* ArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D81570523D8AF23005280DD /* ArticleView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		9D8156FE23D75E53005280DD /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		9D81570023D76026005280DD /* ArticleListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListDataSource.swift; sourceTree = "<group>"; };
 		9D81570223D79935005280DD /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		9D81570423D8AF23005280DD /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		9D81570523D8AF23005280DD /* ArticleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,8 @@
 			children = (
 				9D8156F623D7407D005280DD /* ArticleListCell.swift */,
 				9D8156F723D7407D005280DD /* ArticleListCell.xib */,
+				9D81570423D8AF23005280DD /* ArticleViewController.swift */,
+				9D81570523D8AF23005280DD /* ArticleView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D1AE15B23CE165400C85B5A /* LaunchScreen.storyboard in Resources */,
+				9D81570723D8AF23005280DD /* ArticleView.xib in Resources */,
 				9D8156F223D675D4005280DD /* ArticleListView.xib in Resources */,
 				9D1AE15823CE165400C85B5A /* Assets.xcassets in Resources */,
 				9D1AE15623CE164D00C85B5A /* Main.storyboard in Resources */,
@@ -339,6 +346,7 @@
 				9D8156EA23D65864005280DD /* Dynamic.swift in Sources */,
 				9D81570323D79935005280DD /* ImageCache.swift in Sources */,
 				9D1AE15123CE164D00C85B5A /* AppDelegate.swift in Sources */,
+				9D81570623D8AF23005280DD /* ArticleViewController.swift in Sources */,
 				9D8156F123D675D4005280DD /* ArticleListViewController.swift in Sources */,
 				9D8156FF23D75E53005280DD /* UITableView.swift in Sources */,
 				9D8156E823D62F52005280DD /* Dependencies.swift in Sources */,
