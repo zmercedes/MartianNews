@@ -32,7 +32,7 @@ class ArticleListCoordinator: Coordinator {
         let viewController = ArticleListViewController(dataSource: self.dataSource)
         viewController.title = "The Martian News"
         viewController.delegate = self
-        navigationController.setViewControllers([viewController], animated: false)
+        navigationController.setViewControllers([viewController], animated: true)
         dependencies.dataProvider.articles.observe { articles in
             let language = self.dependencies.dataProvider.language.value
             self.dataSource.updateArticles(articles: articles, language: language)
@@ -42,9 +42,7 @@ class ArticleListCoordinator: Coordinator {
     func navigate(to destination: ArticleListCoordinator.Destination) {
         switch destination {
         case .selectedArticle:
-            let language = dependencies.dataProvider.language.value
-            let image = dependencies.imageCache.getImage(url: currentArticle!.imageURL)!
-            let viewController = ArticleViewController(article: currentArticle!, language: language, image: image)
+            let viewController = ArticleViewController(article: currentArticle!, dependencies: dependencies)
             navigationController.pushViewController(viewController, animated: true)
         }
     }

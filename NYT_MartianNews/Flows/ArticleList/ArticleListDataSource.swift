@@ -26,6 +26,7 @@ class ArticleListDataSource: NSObject, UITableViewDataSource {
         let article = articles[indexPath.row]
         let cell: ArticleListCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.title.text = article.title[language!]
+        cell.preview.text = article.body[language!]
         if let image = imageCache.getImage(url: article.imageURL) {
             cell.cellImage.image = image
         } else {
