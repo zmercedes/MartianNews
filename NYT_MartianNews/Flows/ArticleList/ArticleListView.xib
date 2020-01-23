@@ -22,16 +22,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vdi-w6-BFb">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="28" width="375" height="639"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </tableView>
             </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vdi-w6-BFb" secondAttribute="trailing" id="W7T-L1-rcI"/>
                 <constraint firstItem="vdi-w6-BFb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WC5-AP-AJJ"/>
-                <constraint firstItem="vdi-w6-BFb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bbs-mc-VEg"/>
+                <constraint firstItem="vdi-w6-BFb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="bbs-mc-VEg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="vdi-w6-BFb" secondAttribute="bottom" id="sg4-eV-9Yp"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

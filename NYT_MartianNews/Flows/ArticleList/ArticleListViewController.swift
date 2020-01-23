@@ -8,16 +8,23 @@
 
 import UIKit
 
+protocol ArticleListViewControllerDelegate: class {
+    func viewArticle(row: Int)
+}
+
 class ArticleListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var setupTable: (()-> Void)?
+    
+    weak var delegate: ArticleListViewControllerDelegate?
     
     init(dataSource: ArticleListDataSource) {
         super.init(nibName: nil, bundle: nil)
         setupTable = {
             self.tableView.dataSource = dataSource
             self.tableView.register(ArticleListCell.self)
+            self.tableView.delegate = self
             self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         }
     }
@@ -30,5 +37,11 @@ class ArticleListViewController: UIViewController {
         super.viewDidLoad()
         setupTable!()
     }
+}
 
+extension ArticleListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.viewArticle(row: indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 }
