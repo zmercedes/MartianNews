@@ -36,7 +36,8 @@ class AppCoordinator: Coordinator {
         switch destination {
         case .articleList:
             let navigationController = UINavigationController()
-            rootViewController.present(navigationController, animated: false, completion: nil)
+            navigationController.removeDivider()
+            rootViewController.present(navigationController, animated: true, completion: nil)
             articleListCoordinator = ArticleListCoordinator(dependencies: dependencies, navigation: navigationController)
             articleListCoordinator!.start()
             
