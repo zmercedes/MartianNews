@@ -13,10 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ArticleViewController" customModule="NYT_MartianNews" customModuleProvider="target">
             <connections>
                 <outlet property="bodyLabel" destination="MvO-pq-F6A" id="9df-RP-cJU"/>
-                <outlet property="contentView" destination="25j-oL-bTB" id="Doh-If-eKG"/>
                 <outlet property="imageView" destination="W2v-mf-2Cd" id="kHM-Th-C2M"/>
                 <outlet property="imageViewHeight" destination="17E-nK-162" id="Lwm-jr-beS"/>
-                <outlet property="scrollView" destination="BYT-Jt-Cl1" id="M2s-Zc-kYs"/>
                 <outlet property="titleLabel" destination="xsd-B4-bw0" id="x4N-hS-fOP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
