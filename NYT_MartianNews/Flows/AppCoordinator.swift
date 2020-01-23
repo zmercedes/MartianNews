@@ -24,7 +24,7 @@ class AppCoordinator: Coordinator {
         self.window = window
         self.window.rootViewController = rootViewController
         self.dependencies = dependencies
-        self.window.backgroundColor = .purple
+        self.window.backgroundColor = .white
         self.window.makeKeyAndVisible()
     }
     
