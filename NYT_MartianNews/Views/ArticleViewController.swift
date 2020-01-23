@@ -17,16 +17,24 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
     
     var setupView: (()->Void)?
+    let disposeBag = DisposeBag()
     
-    init(article: Article, language: Languages,image: UIImage){
+    init(article: Article, dependencies: Dependencies){
         super.init(nibName: nil, bundle: nil)
         setupView = {
-            self.titleLabel.text = article.title[language]
+            self.titleLabel.adjustsFontSizeToFitWidth = true
+            let lang = dependencies.dataProvider.language.value
+            self.titleLabel.text = article.title[lang]
+            self.bodyLabel.text = article.body[lang]
+            let image = dependencies.imageCache.getImage(url: article.imageURL)
             self.imageView.image = image
             let height = article.imageDimensions[1]
             self.imageViewHeight.constant = CGFloat(height)
             self.imageView.layoutIfNeeded()
-            self.bodyLabel.text = article.body[language]
+            dependencies.dataProvider.language.observe { language in
+                self.titleLabel.text = article.title[language]
+                self.bodyLabel.text = article.body[language]
+            }.dispose(with: self.disposeBag)
         }
     }
     
