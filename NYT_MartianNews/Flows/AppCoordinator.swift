@@ -37,6 +37,7 @@ class AppCoordinator: Coordinator {
         case .articleList:
             let navigationController = UINavigationController()
             navigationController.removeDivider()
+            navigationController.navigationBar.tintColor = .black
             rootViewController.present(navigationController, animated: true, completion: nil)
             articleListCoordinator = ArticleListCoordinator(dependencies: dependencies, navigation: navigationController)
             articleListCoordinator!.start()
