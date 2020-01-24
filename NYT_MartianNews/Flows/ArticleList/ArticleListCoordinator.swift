@@ -12,6 +12,7 @@ class ArticleListCoordinator: Coordinator {
    
     enum Destination {
         case selectedArticle
+        case settings
     }
     
     private let dependencies: Dependencies
@@ -31,6 +32,7 @@ class ArticleListCoordinator: Coordinator {
         print("navigated to Article List")
         let viewController = ArticleListViewController(dataSource: self.dataSource)
         viewController.title = "The Martian News"
+        addSettingsButton(view: viewController)
         viewController.delegate = self
         navigationController.setViewControllers([viewController], animated: true)
         dependencies.dataProvider.articles.observe { articles in
@@ -43,8 +45,25 @@ class ArticleListCoordinator: Coordinator {
         switch destination {
         case .selectedArticle:
             let viewController = ArticleViewController(article: currentArticle!, dependencies: dependencies)
+            viewController.title = "Article"
+            addSettingsButton(view: viewController)
+            navigationController.pushViewController(viewController, animated: true)
+        case .settings:
+            print("navigated to settings")
+            let viewController = SettingsViewController()
+            viewController.title = "Settings"
             navigationController.pushViewController(viewController, animated: true)
         }
+    }
+    
+    func addSettingsButton(view: UIViewController) {
+        let settingImage = #imageLiteral(resourceName: "ico-cog")
+        let settingsButton = UIBarButtonItem(image: settingImage, style: .plain, target: self, action: #selector(settingsButtonPressed))
+        view.navigationItem.setRightBarButton(settingsButton, animated: false)
+    }
+    
+    @objc func settingsButtonPressed() {
+        navigate(to: .settings)
     }
 }
 
