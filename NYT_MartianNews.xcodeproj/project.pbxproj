@@ -34,6 +34,8 @@
 		9D81570623D8AF23005280DD /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570423D8AF23005280DD /* ArticleViewController.swift */; };
 		9D81570723D8AF23005280DD /* ArticleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D81570523D8AF23005280DD /* ArticleView.xib */; };
 		9D81570923D9E2D7005280DD /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570823D9E2D7005280DD /* UINavigationController.swift */; };
+		9D81570C23DA23EA005280DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570A23DA23EA005280DD /* SettingsViewController.swift */; };
+		9D81570D23DA23EA005280DD /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D81570B23DA23EA005280DD /* SettingsView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		9D81570423D8AF23005280DD /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		9D81570523D8AF23005280DD /* ArticleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleView.xib; sourceTree = "<group>"; };
 		9D81570823D9E2D7005280DD /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		9D81570A23DA23EA005280DD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9D81570B23DA23EA005280DD /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,8 @@
 				9D8156F723D7407D005280DD /* ArticleListCell.xib */,
 				9D81570423D8AF23005280DD /* ArticleViewController.swift */,
 				9D81570523D8AF23005280DD /* ArticleView.xib */,
+				9D81570A23DA23EA005280DD /* SettingsViewController.swift */,
+				9D81570B23DA23EA005280DD /* SettingsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				9D8156F223D675D4005280DD /* ArticleListView.xib in Resources */,
 				9D1AE15823CE165400C85B5A /* Assets.xcassets in Resources */,
 				9D1AE15623CE164D00C85B5A /* Main.storyboard in Resources */,
+				9D81570D23DA23EA005280DD /* SettingsView.xib in Resources */,
 				9D8156F923D7407D005280DD /* ArticleListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +344,7 @@
 			files = (
 				9D1AE17D23CE6D0500C85B5A /* AppCoordinator.swift in Sources */,
 				9D81570923D9E2D7005280DD /* UINavigationController.swift in Sources */,
+				9D81570C23DA23EA005280DD /* SettingsViewController.swift in Sources */,
 				9D81570123D76026005280DD /* ArticleListDataSource.swift in Sources */,
 				9D8156E623D62B5F005280DD /* ArticleListCoordinator.swift in Sources */,
 				9D8156FB23D75CBE005280DD /* NibLoadableView.swift in Sources */,
