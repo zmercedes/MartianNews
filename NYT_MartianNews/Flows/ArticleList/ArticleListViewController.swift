@@ -21,6 +21,7 @@ class ArticleListViewController: UIViewController {
     
     init(dataSource: ArticleListDataSource) {
         super.init(nibName: nil, bundle: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         setupTable = {
             self.tableView.dataSource = dataSource
             self.tableView.register(ArticleListCell.self)
