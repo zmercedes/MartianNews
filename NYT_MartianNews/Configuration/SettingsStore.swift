@@ -8,7 +8,7 @@
 
 import Foundation
 
-class UserSettings {
+class SettingsStore {
     
     enum Key: String {
         case language

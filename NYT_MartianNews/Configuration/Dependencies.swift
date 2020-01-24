@@ -9,7 +9,8 @@
 import Foundation
 
 open class Dependencies {
-    private lazy var userSettings = UserSettings()
+    private lazy var settingsStore = SettingsStore()
     lazy var imageCache = ImageCache()
-    lazy var dataProvider = DataProvider(settings: userSettings)
+    lazy var dataProvider = DataProvider()
+    lazy var settings = Settings(store: settingsStore)
 }
