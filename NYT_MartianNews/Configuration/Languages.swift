@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Languages: String {
+enum Languages: String, CaseIterable {
     case English
     case Martian
     func make() -> String {
