@@ -11,24 +11,9 @@ import UIKit
 class DataProvider {
     
     let articles = Dynamic<[Article]>([])
-    let language = Dynamic<Languages>(.English)
     
-    private let userSettings: UserSettings
-    private let disposeBag = DisposeBag()
-    
-    init(settings: UserSettings){
-        self.userSettings = settings
+    init(){
         fetchData()
-        
-        language.observe { newlang in
-            if(self.userSettings.getLanguage() != newlang){
-                self.userSettings.storeInfo(language: newlang)
-            }
-        }.dispose(with: disposeBag)
-        
-        if let lang = self.userSettings.getLanguage(), language.value != lang {
-            self.changeLanguage(language: lang)
-        }
     }
     
     func fetchData(){
@@ -38,10 +23,6 @@ class DataProvider {
         } catch {
             print("Unable to get data.")
         }
-    }
-    
-    func changeLanguage(language: Languages) {
-        self.language.value = language
     }
     
     private func decodeJson(data: Data){

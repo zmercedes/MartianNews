@@ -36,7 +36,7 @@ class ArticleListCoordinator: Coordinator {
         viewController.delegate = self
         navigationController.setViewControllers([viewController], animated: true)
         dependencies.dataProvider.articles.observe { articles in
-            let language = self.dependencies.dataProvider.language.value
+            let language = self.dependencies.settings.language.value
             self.dataSource.updateArticles(articles: articles, language: language)
         }.dispose(with: disposeBag)
     }

@@ -24,7 +24,7 @@ class ArticleViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         setupView = {
             self.titleLabel.adjustsFontSizeToFitWidth = true
-            let lang = dependencies.dataProvider.language.value
+            let lang = dependencies.settings.language.value
             self.titleLabel.text = article.title[lang]
             self.bodyLabel.text = article.body[lang]
             let image = dependencies.imageCache.getImage(url: article.imageURL)
@@ -32,7 +32,7 @@ class ArticleViewController: UIViewController {
             let height = article.imageDimensions[1]
             self.imageViewHeight.constant = CGFloat(height)
             self.imageView.layoutIfNeeded()
-            dependencies.dataProvider.language.observe { language in
+            dependencies.settings.language.observe { language in
                 self.titleLabel.text = article.title[language]
                 self.bodyLabel.text = article.body[language]
             }.dispose(with: self.disposeBag)

@@ -17,7 +17,7 @@
 		9D1AE17D23CE6D0500C85B5A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE17C23CE6D0500C85B5A /* AppCoordinator.swift */; };
 		9D1AE18323D2114600C85B5A /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE18223D2114600C85B5A /* DataProvider.swift */; };
 		9D1AE18623D2150700C85B5A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE18523D2150700C85B5A /* Article.swift */; };
-		9D8156E123D4A1FF005280DD /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E023D4A1FF005280DD /* UserSettings.swift */; };
+		9D8156E123D4A1FF005280DD /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E023D4A1FF005280DD /* SettingsStore.swift */; };
 		9D8156E323D62443005280DD /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E223D62443005280DD /* Languages.swift */; };
 		9D8156E623D62B5F005280DD /* ArticleListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E523D62B5F005280DD /* ArticleListCoordinator.swift */; };
 		9D8156E823D62F52005280DD /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8156E723D62F52005280DD /* Dependencies.swift */; };
@@ -36,6 +36,7 @@
 		9D81570923D9E2D7005280DD /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570823D9E2D7005280DD /* UINavigationController.swift */; };
 		9D81570C23DA23EA005280DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570A23DA23EA005280DD /* SettingsViewController.swift */; };
 		9D81570D23DA23EA005280DD /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D81570B23DA23EA005280DD /* SettingsView.xib */; };
+		9D81570F23DA96E6005280DD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570E23DA96E6005280DD /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +64,7 @@
 		9D1AE17C23CE6D0500C85B5A /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		9D1AE18223D2114600C85B5A /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		9D1AE18523D2150700C85B5A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
-		9D8156E023D4A1FF005280DD /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		9D8156E023D4A1FF005280DD /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		9D8156E223D62443005280DD /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		9D8156E523D62B5F005280DD /* ArticleListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCoordinator.swift; sourceTree = "<group>"; };
 		9D8156E723D62F52005280DD /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		9D81570823D9E2D7005280DD /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		9D81570A23DA23EA005280DD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9D81570B23DA23EA005280DD /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		9D81570E23DA96E6005280DD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,9 +208,10 @@
 		9D8156DF23D49D50005280DD /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				9D8156E023D4A1FF005280DD /* UserSettings.swift */,
+				9D8156E023D4A1FF005280DD /* SettingsStore.swift */,
 				9D8156E223D62443005280DD /* Languages.swift */,
 				9D8156E723D62F52005280DD /* Dependencies.swift */,
+				9D81570E23DA96E6005280DD /* Settings.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -353,7 +356,7 @@
 				9D1AE18623D2150700C85B5A /* Article.swift in Sources */,
 				9D8156FD23D75D88005280DD /* ReusableView.swift in Sources */,
 				9D1AE18323D2114600C85B5A /* DataProvider.swift in Sources */,
-				9D8156E123D4A1FF005280DD /* UserSettings.swift in Sources */,
+				9D8156E123D4A1FF005280DD /* SettingsStore.swift in Sources */,
 				9D8156F823D7407D005280DD /* ArticleListCell.swift in Sources */,
 				9D8156EA23D65864005280DD /* Dynamic.swift in Sources */,
 				9D81570323D79935005280DD /* ImageCache.swift in Sources */,
@@ -362,6 +365,7 @@
 				9D8156F123D675D4005280DD /* ArticleListViewController.swift in Sources */,
 				9D8156FF23D75E53005280DD /* UITableView.swift in Sources */,
 				9D8156E823D62F52005280DD /* Dependencies.swift in Sources */,
+				9D81570F23DA96E6005280DD /* Settings.swift in Sources */,
 				9D1AE17B23CE616100C85B5A /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
