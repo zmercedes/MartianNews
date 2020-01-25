@@ -35,9 +35,13 @@ class ArticleListCoordinator: Coordinator {
         addSettingsButton(view: viewController)
         viewController.delegate = self
         navigationController.setViewControllers([viewController], animated: true)
+        
         dependencies.dataProvider.articles.observe { articles in
-            let language = self.dependencies.settings.language.value
-            self.dataSource.updateArticles(articles: articles, language: language)
+            self.dataSource.updateArticles(articles: articles)
+        }.dispose(with: disposeBag)
+        
+        dependencies.settings.language.observe { language in
+            self.dataSource.updateLanguage(language: language)
         }.dispose(with: disposeBag)
     }
     
@@ -50,7 +54,8 @@ class ArticleListCoordinator: Coordinator {
             navigationController.pushViewController(viewController, animated: true)
         case .settings:
             print("navigated to settings")
-            let viewController = SettingsViewController()
+            let viewController = SettingsViewController(settings: dependencies.settings)
+            viewController.delegate = self
             viewController.title = "Settings"
             navigationController.pushViewController(viewController, animated: true)
         }
@@ -71,5 +76,11 @@ extension ArticleListCoordinator: ArticleListViewControllerDelegate {
     func viewArticle(row: Int) {
         currentArticle = self.dependencies.dataProvider.articles.value[row]
         navigate(to: .selectedArticle)
+    }
+}
+
+extension ArticleListCoordinator: SettingsViewControllerDelegate {
+    func selectedLanguage(language: Languages) {
+        dependencies.settings.setLanguage(language: language)
     }
 }

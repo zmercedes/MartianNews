@@ -10,9 +10,15 @@ import UIKit
 
 class ArticleListDataSource: NSObject, UITableViewDataSource {
 
+    weak var tableView: UITableView?
     private var articles: [Article] = []
-    private var language: Languages?
+    private var language: Languages? {
+        didSet {
+            tableView?.reloadData()
+        }
+    }
     private var imageCache: ImageCache
+    private let disposeBag = DisposeBag()
     
     init(imageCache: ImageCache){
         self.imageCache = imageCache
@@ -43,8 +49,11 @@ class ArticleListDataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
-    func updateArticles(articles: [Article], language: Languages){
+    func updateArticles(articles: [Article]){
         self.articles = articles
+    }
+    
+    func updateLanguage(language: Languages) {
         self.language = language
     }
 }
