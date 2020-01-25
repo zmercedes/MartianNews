@@ -29,14 +29,22 @@ class SettingsStore {
     }
     
     func getLanguage() -> Languages? {
-        return readValue(forKey: .language)
+        let language = readValue(forKey: .language)
+        switch language {
+        case Languages.English.make():
+            return .English
+        case Languages.Martian.make():
+            return .Martian
+        default:
+            return nil
+        }
     }
     
     private func saveValue(forKey key: Key, value: Languages){
         userDefaults.set(value.make(), forKey: key.make())
     }
     
-    private func readValue<T>(forKey key: Key) -> T? {
-        return userDefaults.value(forKey: key.make()) as? T
+    private func readValue(forKey key: Key) -> String? {
+        return userDefaults.string(forKey: key.make())
     }
 }
