@@ -29,22 +29,28 @@ class MartianTranslationTests: XCTestCase {
         XCTAssertEqual(word, martianWord)
     }
     
+    func testTranslation_capitalized() {
+        word = "Nice"
+        let martianWord = word.toMartian()
+        XCTAssertEqual(martianWord, "Boinga")
+    }
+    
     func testTranslation_uncapitalized() {
         word = "four"
         let martianWord = word.toMartian()
         XCTAssertEqual(martianWord, "boinga")
     }
     
+    func testTranslation_whiteSpace() {
+        word = "      "
+        let martianWord = word.toMartian()
+        XCTAssertEqual(martianWord, word)
+    }
+    
     func testTranslation_wordWithNumber() {
         word = "fri3nd"
         let martianWord = word.toMartian()
         XCTAssertEqual(martianWord, "boinga")
-    }
-    
-    func testTranslation_capitalized() {
-        word = "Nice"
-        let martianWord = word.toMartian()
-        XCTAssertEqual(martianWord, "Boinga")
     }
     
     func testTranslation_newline() {
