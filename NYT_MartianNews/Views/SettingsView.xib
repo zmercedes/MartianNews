@@ -31,14 +31,32 @@
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DPo-C1-ETi">
                     <rect key="frame" x="0.0" y="102" width="375" height="216"/>
                 </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djQ-pM-JSN">
+                    <rect key="frame" x="152.5" y="293" width="70" height="36"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="Oue-dF-8WF"/>
+                        <constraint firstAttribute="height" constant="36" id="wNv-RG-XoS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Select">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="selectButtonPressed:" destination="-1" eventType="touchUpInside" id="zga-g5-kNO"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="djQ-pM-JSN" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="14b-b1-rax"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mqp-qy-wbt" secondAttribute="trailing" constant="20" id="4Bg-1s-xui"/>
                 <constraint firstItem="mqp-qy-wbt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="8ub-Xa-sHJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DPo-C1-ETi" secondAttribute="trailing" id="QC1-34-MhP"/>
                 <constraint firstItem="DPo-C1-ETi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qe4-u1-5u1"/>
                 <constraint firstItem="DPo-C1-ETi" firstAttribute="top" secondItem="mqp-qy-wbt" secondAttribute="bottom" constant="35" id="W5n-Gv-UbX"/>
+                <constraint firstItem="djQ-pM-JSN" firstAttribute="top" secondItem="DPo-C1-ETi" secondAttribute="bottom" constant="-25" id="rS3-nc-rdn"/>
                 <constraint firstItem="mqp-qy-wbt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="tG6-4n-iXO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

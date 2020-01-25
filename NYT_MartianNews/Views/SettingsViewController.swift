@@ -19,12 +19,36 @@ class SettingsViewController: UIViewController {
     
     weak var delegate: SettingsViewControllerDelegate?
     
+    var setupView: (() -> Void)?
+    var language: Languages
+    private var disposeBag = DisposeBag()
+    
+    init(settings: Settings) {
+        language = settings.language.value
+        super.init(nibName: nil, bundle: nil)
+        setupView = {
+            settings.language.observe { newLang in
+                self.language = newLang
+                self.languagePickerView.reloadAllComponents()
+            }.dispose(with: self.disposeBag)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         languagePickerView.delegate = self
+        setupView!()
     }
-
-
+    
+    @IBAction func selectButtonPressed(_ sender: Any) {
+        let lang = Languages.allCases[languagePickerView.selectedRow(inComponent: 0)]
+        delegate?.selectedLanguage(language: lang)
+    }
+    
 }
 
 extension SettingsViewController: UIPickerViewDelegate {
@@ -35,8 +59,11 @@ extension SettingsViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 //        print("doing")
         self.view.endEditing(true)
-        let language = Languages.allCases[row].make()
-        return language
+        var lang = Languages.allCases[row].make()
+        if lang == language.make() {
+            lang.append(" ☑️")
+        }
+        return lang
     }
 }
 
@@ -44,6 +71,4 @@ extension SettingsViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
-    
 }
