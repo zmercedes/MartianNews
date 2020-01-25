@@ -16,15 +16,17 @@ final class Settings {
     
     init(store: SettingsStore){
         self.settingsStore = store
-        
+        if let lang = self.settingsStore.getLanguage(), language.value != lang {
+            self.language.value = lang
+        }
         language.observe { newlang in
             if(self.settingsStore.getLanguage() != newlang){
                 self.settingsStore.storeInfo(language: newlang)
             }
         }.dispose(with: disposeBag)
-        
-        if let lang = self.settingsStore.getLanguage(), language.value != lang {
-            self.language.value = lang
-        }
+    }
+    
+    func setLanguage(language: Languages) {
+        self.language.value = language
     }
 }
