@@ -15,9 +15,9 @@ class Article {
     let body: [Languages:String]
     
     init(title: String, image: String, dimensions: [Int], body: String){
-        self.title = [.English:title,.Martian:""]
+        self.title = [.English: title,.Martian: title.toMartian()]
         self.imageURL = image
         self.imageDimensions = dimensions
-        self.body = [.English:body, .Martian:""]
+        self.body = [.English: body, .Martian: body.toMartian()]
     }
 }
