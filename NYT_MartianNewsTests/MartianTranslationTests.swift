@@ -29,13 +29,13 @@ class MartianTranslationTests: XCTestCase {
         XCTAssertEqual(word, martianWord)
     }
     
-    func testTranslation_capitalized() {
+    func testTranslation_wordUpper() {
         word = "Nice"
         let martianWord = word.toMartian()
         XCTAssertEqual(martianWord, "Boinga")
     }
     
-    func testTranslation_uncapitalized() {
+    func testTranslation_wordLower() {
         word = "four"
         let martianWord = word.toMartian()
         XCTAssertEqual(martianWord, "boinga")
@@ -57,6 +57,12 @@ class MartianTranslationTests: XCTestCase {
         word = "\n\n"
         let martianWord = word.toMartian()
         XCTAssertEqual(martianWord, word)
+    }
+    
+    func testTranslation_wordCapitalizedWithPunctuation() {
+        word = "Facebook's"
+        let martianWord = word.toMartian()
+        XCTAssertEqual(martianWord, "Boinga")
     }
     
     func testTranslation_sentenceUpper() {
@@ -81,6 +87,18 @@ class MartianTranslationTests: XCTestCase {
         word = "This is a sentence with Various \n\n Tricky things."
         let martianSentence = word.toMartian()
         XCTAssertEqual(martianSentence, "Boinga is a boinga boinga Boinga \n\n Boinga boinga.")
+    }
+    
+    func testTranslation_numberWithoutPunctuation() {
+        word = "20000"
+        let martianNumber = word.toMartian()
+        XCTAssertEqual(martianNumber, word)
+    }
+    
+    func testTranslation_numberWithPunctuation(){
+        word = "20,200"
+        let martianNumber = word.toMartian()
+        XCTAssertEqual(word, martianNumber)
     }
     
     func testTranslation_givenExample1() {

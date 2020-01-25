@@ -25,10 +25,29 @@ extension String {
             tokens.append(substring)
             tokenType = CFStringTokenizerAdvanceToNextToken(tokenizer)
         }
-        print(tokens)
         var martianText = ""
         
-        for token in tokens { martianText += token.martian() }
+        let letters = CharacterSet.letters
+        let acceptableStrings = CharacterSet.alphanumerics.union(CharacterSet.punctuationCharacters)
+        
+        for token in tokens {
+            if(token.count <= 3) {
+                martianText += token
+                continue
+            }
+            if (acceptableStrings.isSuperset(of: CharacterSet(charactersIn: token))) {
+                if letters.contains(token.unicodeScalars.first!) {
+                    if token.isFirstCapital() {
+                        martianText +=  "Boinga"
+                        continue
+                    } else {
+                        martianText += "boinga"
+                        continue
+                    }
+                }
+            }
+            martianText += token
+        }
         
         return martianText
     }
@@ -38,24 +57,6 @@ extension String {
         let nsrange = NSMakeRange(aRange.location, aRange.length)
         let substring = (self as NSString).substring(with: nsrange)
         return substring
-    }
-    
-    private func martian() -> String {
-        if count <= 3 { return self }
-        
-        let letters = CharacterSet.letters
-        var martianTranslation: String
-
-        if (CharacterSet.alphanumerics.isSuperset(of: CharacterSet(charactersIn: self))) {
-            if letters.contains(self.unicodeScalars.first!) {
-                if isFirstCapital() { martianTranslation =  "Boinga" }
-                else { martianTranslation =  "boinga" }
-                
-                return martianTranslation
-            }
-        }
-        
-        return self
     }
     
     func isFirstCapital() -> Bool {
