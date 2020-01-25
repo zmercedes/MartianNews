@@ -37,6 +37,8 @@
 		9D81570C23DA23EA005280DD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570A23DA23EA005280DD /* SettingsViewController.swift */; };
 		9D81570D23DA23EA005280DD /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D81570B23DA23EA005280DD /* SettingsView.xib */; };
 		9D81570F23DA96E6005280DD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81570E23DA96E6005280DD /* Settings.swift */; };
+		9D81571123DB3D9B005280DD /* MartianTranslationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81571023DB3D9B005280DD /* MartianTranslationTests.swift */; };
+		9D81571323DB4491005280DD /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D81571223DB4490005280DD /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		9D81570A23DA23EA005280DD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9D81570B23DA23EA005280DD /* SettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		9D81570E23DA96E6005280DD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		9D81571023DB3D9B005280DD /* MartianTranslationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartianTranslationTests.swift; sourceTree = "<group>"; };
+		9D81571223DB4490005280DD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 			children = (
 				9D1AE16523CE165400C85B5A /* NYT_MartianNewsTests.swift */,
 				9D1AE16723CE165400C85B5A /* Info.plist */,
+				9D81571023DB3D9B005280DD /* MartianTranslationTests.swift */,
 			);
 			path = NYT_MartianNewsTests;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			children = (
 				9D8156FE23D75E53005280DD /* UITableView.swift */,
 				9D81570823D9E2D7005280DD /* UINavigationController.swift */,
+				9D81571223DB4490005280DD /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 			files = (
 				9D1AE17D23CE6D0500C85B5A /* AppCoordinator.swift in Sources */,
 				9D81570923D9E2D7005280DD /* UINavigationController.swift in Sources */,
+				9D81571323DB4491005280DD /* String.swift in Sources */,
 				9D81570C23DA23EA005280DD /* SettingsViewController.swift in Sources */,
 				9D81570123D76026005280DD /* ArticleListDataSource.swift in Sources */,
 				9D8156E623D62B5F005280DD /* ArticleListCoordinator.swift in Sources */,
@@ -374,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D81571123DB3D9B005280DD /* MartianTranslationTests.swift in Sources */,
 				9D1AE16623CE165400C85B5A /* NYT_MartianNewsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +514,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
