@@ -34,7 +34,7 @@ class ArticleListCoordinator: Coordinator {
         viewController.title = "The Martian News"
         addSettingsButton(view: viewController)
         viewController.delegate = self
-        navigationController.setViewControllers([viewController], animated: true)
+        navigationController.pushViewController(viewController, animated: true)
 
         dependencies.dataProvider.articles.observe { articles in
             self.dataSource.updateArticles(articles: articles)
@@ -53,7 +53,6 @@ class ArticleListCoordinator: Coordinator {
             addSettingsButton(view: viewController)
             navigationController.pushViewController(viewController, animated: true)
         case .settings:
-            print("navigated to settings")
             let viewController = SettingsViewController(settings: dependencies.settings)
             viewController.delegate = self
             viewController.title = "Settings"

@@ -15,12 +15,13 @@ class AppCoordinator: Coordinator {
     }
 
     private let window: UIWindow
-    private let rootViewController = UIViewController()
+    private let rootViewController: UINavigationController
     private let dependencies: Dependencies
 
     private var articleListCoordinator: ArticleListCoordinator?
 
     init(window: UIWindow, dependencies: Dependencies) {
+        self.rootViewController = UINavigationController()
         self.window = window
         self.window.rootViewController = rootViewController
         self.dependencies = dependencies
@@ -35,11 +36,9 @@ class AppCoordinator: Coordinator {
     internal func navigate(to destination: Destination) {
         switch destination {
         case .articleList:
-            let navigationController = UINavigationController()
-            navigationController.removeDivider()
-            navigationController.navigationBar.tintColor = .black
-            rootViewController.present(navigationController, animated: true, completion: nil)
-            articleListCoordinator = ArticleListCoordinator(dependencies: dependencies, navigation: navigationController)
+            rootViewController.removeDivider()
+            rootViewController.navigationBar.tintColor = .black
+            articleListCoordinator = ArticleListCoordinator(dependencies: dependencies, navigation: rootViewController)
             articleListCoordinator!.start()
 
         }
