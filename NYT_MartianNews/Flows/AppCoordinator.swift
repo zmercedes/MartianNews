@@ -9,29 +9,29 @@
 import UIKit
 
 class AppCoordinator: Coordinator {
-    
+
     enum Destination {
         case articleList
     }
-    
+
     private let window: UIWindow
     private let rootViewController = UIViewController()
     private let dependencies: Dependencies
-    
+
     private var articleListCoordinator: ArticleListCoordinator?
-    
-    init(window: UIWindow, dependencies: Dependencies){
+
+    init(window: UIWindow, dependencies: Dependencies) {
         self.window = window
         self.window.rootViewController = rootViewController
         self.dependencies = dependencies
         self.window.backgroundColor = .white
         self.window.makeKeyAndVisible()
     }
-    
-    func start(){
+
+    func start() {
         navigate(to: .articleList)
     }
-    
+
     internal func navigate(to destination: Destination) {
         switch destination {
         case .articleList:
@@ -41,7 +41,7 @@ class AppCoordinator: Coordinator {
             rootViewController.present(navigationController, animated: true, completion: nil)
             articleListCoordinator = ArticleListCoordinator(dependencies: dependencies, navigation: navigationController)
             articleListCoordinator!.start()
-            
+
         }
     }
 }

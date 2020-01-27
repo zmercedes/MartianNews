@@ -19,15 +19,15 @@ class ArticleListDataSource: NSObject, UITableViewDataSource {
     }
     private var imageCache: ImageCache
     private let disposeBag = DisposeBag()
-    
-    init(imageCache: ImageCache){
+
+    init(imageCache: ImageCache) {
         self.imageCache = imageCache
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article = articles[indexPath.row]
         let cell: ArticleListCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
@@ -45,14 +45,14 @@ class ArticleListDataSource: NSObject, UITableViewDataSource {
                 print("couldn't get image")
             }
         }
-        
+
         return cell
     }
-    
-    func updateArticles(articles: [Article]){
+
+    func updateArticles(articles: [Article]) {
         self.articles = articles
     }
-    
+
     func updateLanguage(language: Languages) {
         self.language = language
     }

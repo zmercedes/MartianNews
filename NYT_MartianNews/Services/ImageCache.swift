@@ -10,11 +10,11 @@ import UIKit
 
 final class ImageCache {
     private var images: [String: UIImage] = [:]
-    
+
     func storeImage(url: String, newImage: UIImage) {
         images[url] = newImage
     }
-    
+
     func getImage(url: String) -> UIImage? {
         if let image = images[url] {
             return image
@@ -22,8 +22,8 @@ final class ImageCache {
             return nil
         }
     }
-    
-    func clear(){
+
+    func clear() {
         for key in images.keys {
             images[key] = nil
         }

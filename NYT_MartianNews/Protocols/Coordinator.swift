@@ -10,7 +10,7 @@ import UIKit
 
 protocol Coordinator: class {
     associatedtype Destination
-    
+
     func start()
     func navigate(to destination: Destination)
 }

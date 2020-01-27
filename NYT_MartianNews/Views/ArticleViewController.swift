@@ -13,13 +13,13 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var bodyLabel: UILabel!
-    
+
     @IBOutlet weak var imageViewHeight: NSLayoutConstraint!
-    
-    var setupView: (()->Void)?
+
+    var setupView: (() -> Void)?
     let disposeBag = DisposeBag()
-    
-    init(article: Article, dependencies: Dependencies){
+
+    init(article: Article, dependencies: Dependencies) {
         super.init(nibName: nil, bundle: nil)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         setupView = {
@@ -38,11 +38,11 @@ class ArticleViewController: UIViewController {
             }.dispose(with: self.disposeBag)
         }
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView!()

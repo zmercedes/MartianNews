@@ -25,17 +25,17 @@ public class AnyDynamic<T>: DynamicType {
             bonds.forEach { $0.bond?.listener(value, self) }
         }
     }
-    
+
     fileprivate var bonds: [BondWrapper<T>] = []
-    
+
     public init(_ value: T) {
         self.value = value
     }
-    
+
     deinit {
         mapBond = nil
     }
-    
+
     public func map<U>(_ transform: @escaping (T) -> U) -> AnyDynamic<U> {
         let dynamic = AnyDynamic<U>(transform(value))
         let bond = Bond<T> { value, _ in dynamic.value = transform(value) }
@@ -43,7 +43,7 @@ public class AnyDynamic<T>: DynamicType {
         dynamic.mapBond = bond
         return dynamic
     }
-    
+
     @discardableResult
     public func observe(onNext: @escaping (T) -> Void) -> Bond<T> {
         let bond = Bond<T> { value, _ in
@@ -95,16 +95,16 @@ protocol BondType { }
 
 public class Bond<T>: BondType {
     var listener: Listener<T>
-    
+
     public init(_ listener: @escaping Listener<T>) {
         self.listener = listener
     }
-    
+
     public func bind(to dynamic: AnyDynamic<T>) {
         dynamic.bonds.append(BondWrapper(self))
         listener(dynamic.value, dynamic)
     }
-    
+
     @discardableResult
     public func dispose(with disposeBag: DisposeBag) -> Bond<T> {
         disposeBag.manage(bond: self)
@@ -114,7 +114,7 @@ public class Bond<T>: BondType {
 
 class BondWrapper<T> {
     weak var bond: Bond<T>?
-    
+
     init(_ bond: Bond<T>) {
         self.bond = bond
     }
@@ -125,9 +125,8 @@ class BondWrapper<T> {
 public final class DisposeBag {
     private var bonds = [BondType]()
     public var count: Int { return bonds.count }
-    
+
     fileprivate func manage(bond: BondType) {
         bonds.append(bond)
     }
 }
-

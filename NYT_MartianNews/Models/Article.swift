@@ -9,13 +9,13 @@
 import Foundation
 
 class Article {
-    let title: [Languages:String]
+    let title: [Languages: String]
     let imageURL: String
     let imageDimensions: [Int]
-    let body: [Languages:String]
-    
-    init(title: String, image: String, dimensions: [Int], body: String){
-        self.title = [.English: title,.Martian: title.toMartian()]
+    let body: [Languages: String]
+
+    init(title: String, image: String, dimensions: [Int], body: String) {
+        self.title = [.English: title, .Martian: title.toMartian()]
         self.imageURL = image
         self.imageDimensions = dimensions
         self.body = [.English: body, .Martian: body.toMartian()]

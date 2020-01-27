@@ -13,7 +13,7 @@ class ArticleListCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var preview: UILabel!
     @IBOutlet weak var cellImage: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         self.title.adjustsFontSizeToFitWidth = true
@@ -24,5 +24,5 @@ class ArticleListCell: UITableViewCell {
         title.text = nil
         preview.text = nil
     }
-    
+
 }
