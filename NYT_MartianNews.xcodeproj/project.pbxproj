@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34857CC416FBDD7B6EC92601 /* libPods-NYT_MartianNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4A15C07501219D733DBE58 /* libPods-NYT_MartianNews.a */; };
 		9D1AE15123CE164D00C85B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE15023CE164D00C85B5A /* AppDelegate.swift */; };
 		9D1AE15323CE164D00C85B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1AE15223CE164D00C85B5A /* ViewController.swift */; };
 		9D1AE15623CE164D00C85B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D1AE15423CE164D00C85B5A /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A4A15C07501219D733DBE58 /* libPods-NYT_MartianNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NYT_MartianNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1AE14D23CE164D00C85B5A /* NYT_MartianNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT_MartianNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D1AE15023CE164D00C85B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D1AE15223CE164D00C85B5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,8 @@
 		9D81570E23DA96E6005280DD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		9D81571023DB3D9B005280DD /* MartianTranslationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartianTranslationTests.swift; sourceTree = "<group>"; };
 		9D81571223DB4490005280DD /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A818646D4C3FAD30860ED305 /* Pods-NYT_MartianNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYT_MartianNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NYT_MartianNews/Pods-NYT_MartianNews.debug.xcconfig"; sourceTree = "<group>"; };
+		D822D34730521F847260BBF7 /* Pods-NYT_MartianNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NYT_MartianNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-NYT_MartianNews/Pods-NYT_MartianNews.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34857CC416FBDD7B6EC92601 /* libPods-NYT_MartianNews.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +113,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		545352461622DFA984BEC573 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A818646D4C3FAD30860ED305 /* Pods-NYT_MartianNews.debug.xcconfig */,
+				D822D34730521F847260BBF7 /* Pods-NYT_MartianNews.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		5CA2AC1125206474A5CDBBD0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A4A15C07501219D733DBE58 /* libPods-NYT_MartianNews.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9D1AE14423CE164D00C85B5A = {
 			isa = PBXGroup;
 			children = (
 				9D1AE14F23CE164D00C85B5A /* NYT_MartianNews */,
 				9D1AE16423CE165400C85B5A /* NYT_MartianNewsTests */,
 				9D1AE14E23CE164D00C85B5A /* Products */,
+				545352461622DFA984BEC573 /* Pods */,
+				5CA2AC1125206474A5CDBBD0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,9 +277,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9D1AE16A23CE165400C85B5A /* Build configuration list for PBXNativeTarget "NYT_MartianNews" */;
 			buildPhases = (
+				FA84FF149352BBC53C85DE5B /* [CP] Check Pods Manifest.lock */,
 				9D1AE14923CE164D00C85B5A /* Sources */,
 				9D1AE14A23CE164D00C85B5A /* Frameworks */,
 				9D1AE14B23CE164D00C85B5A /* Resources */,
+				9D81571723DF46AC005280DD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -345,6 +371,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D81571723DF46AC005280DD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		FA84FF149352BBC53C85DE5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NYT_MartianNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9D1AE14923CE164D00C85B5A /* Sources */ = {
@@ -535,6 +603,7 @@
 		};
 		9D1AE16B23CE165400C85B5A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A818646D4C3FAD30860ED305 /* Pods-NYT_MartianNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -553,6 +622,7 @@
 		};
 		9D1AE16C23CE165400C85B5A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D822D34730521F847260BBF7 /* Pods-NYT_MartianNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
