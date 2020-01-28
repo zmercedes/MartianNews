@@ -19,14 +19,14 @@ class DataProvider {
     func fetchData() {
         do {
             let data = try Data(contentsOf: URL(string: "https://s1.nyt.com/ios-newsreader/candidates/test/articles.json")!)
-            decodeJson(data: data)
+            try decodeJson(data: data)
         } catch {
             print("Unable to get data.")
         }
     }
 
-    private func decodeJson(data: Data) {
-        let json = try! JSONSerialization.jsonObject(with: data, options: [])
+    private func decodeJson(data: Data) throws {
+        let json = try JSONSerialization.jsonObject(with: data, options: [])
         let articleData = json as! [[String: Any]]
         var newArticles: [Article] = []
 
