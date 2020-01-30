@@ -23,18 +23,18 @@
                         <rect key="frame" x="0.0" y="4.5" width="320" height="159"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="default" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E4-H0-kCr" userLabel="Title Label">
-                                <rect key="frame" x="10" y="10" width="190" height="60"/>
+                                <rect key="frame" x="10" y="10" width="190" height="55"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="dK4-mX-iYn"/>
+                                    <constraint firstAttribute="height" constant="55" id="dK4-mX-iYn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preview Text" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E2-lC-cIe" userLabel="Preview Label">
-                                <rect key="frame" x="10" y="80" width="190" height="69"/>
+                                <rect key="frame" x="10" y="75" width="190" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="69" id="IKW-yG-W4U"/>
+                                    <constraint firstAttribute="height" constant="60" id="IKW-yG-W4U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
@@ -51,13 +51,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3E4-H0-kCr" firstAttribute="leading" secondItem="DLT-Qw-PhQ" secondAttribute="leading" constant="10" id="9il-4g-FTy"/>
-                            <constraint firstItem="3E2-lC-cIe" firstAttribute="top" secondItem="3E4-H0-kCr" secondAttribute="bottom" constant="10" id="A46-wo-4Eb"/>
                             <constraint firstItem="3E2-lC-cIe" firstAttribute="leading" secondItem="DLT-Qw-PhQ" secondAttribute="leading" constant="10" id="ITh-Kf-gCQ"/>
                             <constraint firstAttribute="trailing" secondItem="mRv-Kk-e4O" secondAttribute="trailing" constant="10" id="P3f-ly-vYJ"/>
+                            <constraint firstItem="3E2-lC-cIe" firstAttribute="top" secondItem="3E4-H0-kCr" secondAttribute="bottom" constant="10" id="PUy-vz-BvB"/>
                             <constraint firstAttribute="bottom" secondItem="mRv-Kk-e4O" secondAttribute="bottom" constant="49" id="Y8a-bp-rD9"/>
                             <constraint firstItem="mRv-Kk-e4O" firstAttribute="top" secondItem="DLT-Qw-PhQ" secondAttribute="top" constant="10" id="a36-yw-a9X"/>
+                            <constraint firstAttribute="bottom" secondItem="3E2-lC-cIe" secondAttribute="bottom" constant="24" id="av3-DF-QeP"/>
                             <constraint firstItem="mRv-Kk-e4O" firstAttribute="leading" secondItem="3E4-H0-kCr" secondAttribute="trailing" constant="10" id="c7E-r9-eJ0"/>
-                            <constraint firstAttribute="bottom" secondItem="3E2-lC-cIe" secondAttribute="bottom" constant="10" id="eWP-LN-EDT"/>
                             <constraint firstItem="3E4-H0-kCr" firstAttribute="top" secondItem="DLT-Qw-PhQ" secondAttribute="top" constant="10" id="jqi-0U-bSN"/>
                             <constraint firstItem="mRv-Kk-e4O" firstAttribute="leading" secondItem="3E2-lC-cIe" secondAttribute="trailing" constant="10" id="syz-sZ-XF1"/>
                         </constraints>

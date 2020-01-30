@@ -17,6 +17,7 @@ class ArticleListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.title.adjustsFontSizeToFitWidth = true
+        self.preview.sizeToFit()
     }
 
     override func prepareForReuse() {
