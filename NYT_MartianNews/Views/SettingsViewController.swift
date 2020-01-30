@@ -26,7 +26,7 @@ class SettingsViewController: UIViewController {
     init(settings: Settings) {
         language = settings.language.value
         super.init(nibName: nil, bundle: nil)
-        setupView = {
+        setupView = { [unowned self] in
             settings.language.observe { newLang in
                 self.language = newLang
                 self.languagePickerView.reloadAllComponents()
