@@ -3,9 +3,9 @@
 
 This app was created using Xcode 10.1 and Swift 4.2. 
 - The app has 3 views: 
--- a list of articles
--- an individual article view
--- a settings view, where you may change the language.
+ - a list of articles
+ - an individual article view
+ - a settings view, where you may change the language.
 - The language is changed dynamically upon selecting one in the settings view.
 - The language change is persisted across runs of the app using UserDefaults.
 
