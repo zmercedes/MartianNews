@@ -11,10 +11,14 @@ import UIKit
 class ArticleListDataSource: NSObject, UITableViewDataSource {
 
     weak var tableView: UITableView?
-    private var articles: [Article] = []
+    private var articles: [Article] = [] {
+        didSet {
+            reload()
+        }
+    }
     private var language: Languages? {
         didSet {
-            tableView?.reloadData()
+            reload()
         }
     }
     private var imageCache: ImageCache
@@ -47,6 +51,12 @@ class ArticleListDataSource: NSObject, UITableViewDataSource {
         }
 
         return cell
+    }
+
+    private func reload() {
+        DispatchQueue.main.async {
+            self.tableView?.reloadData()
+        }
     }
 
     func updateArticles(articles: [Article]) {
