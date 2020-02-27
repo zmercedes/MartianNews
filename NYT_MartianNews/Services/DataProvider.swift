@@ -17,16 +17,33 @@ class DataProvider {
     }
 
     func fetchData() {
-        do {
-            let data = try Data(contentsOf: URL(string: "https://s1.nyt.com/ios-newsreader/candidates/test/articles.json")!)
-            try decodeJson(data: data)
-        } catch {
-            print("Unable to get data.")
+        let url = URL(string: "https://s1.nyt.com/ios-newsreader/candidates/test/articles.json")!
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("client error: \(error.localizedDescription)")
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                print("server error: \(response)")
+                return
+            }
+            if let mime = httpResponse.mimeType, mime == "application/json", let data = data {
+                self.decodeJson(data: data)
+            }
         }
+        task.resume()
     }
 
-    private func decodeJson(data: Data) throws {
-        let json = try JSONSerialization.jsonObject(with: data, options: [])
+    private func decodeJson(data: Data) {
+        var json: Any?
+        do {
+            json = try JSONSerialization.jsonObject(with: data, options: [])
+        } catch {
+            print("Cannot decode")
+            return
+        }
+
         let articleData = json as! [[String: Any]]
         var newArticles: [Article] = []
 
@@ -47,7 +64,7 @@ class DataProvider {
             }
             newArticles.append(Article(title: title, image: topImageUrl, dimensions: dimensions, body: body))
         }
-        print("\(newArticles.count) new articles added.")
+        print("\(newArticles.count) articles added.")
         articles.value = newArticles
     }
 }
