@@ -20,7 +20,11 @@ class ArticleListCoordinator: Coordinator {
     private let dataSource: ArticleListDataSource
     private let disposeBag = DisposeBag()
 
-    private var currentArticle: Article?
+    private var currentArticle: Article? {
+        didSet {
+            navigate(to: .selectedArticle)
+        }
+    }
 
     init(dependencies: Dependencies, navigation: UINavigationController) {
         self.dependencies = dependencies
@@ -30,10 +34,11 @@ class ArticleListCoordinator: Coordinator {
 
     func start() {
         print("navigated to Article List")
-        let viewController = ArticleListViewController(dataSource: self.dataSource)
+        let viewController = ArticleListViewController(dataSource: self.dataSource) { row in
+            self.currentArticle = self.dependencies.dataProvider.articles.value[row]
+        }
         viewController.title = "The Martian News"
         addSettingsButton(view: viewController)
-        viewController.delegate = self
         navigationController.pushViewController(viewController, animated: true)
 
         dependencies.dataProvider.articles.observe { articles in
@@ -53,8 +58,9 @@ class ArticleListCoordinator: Coordinator {
             addSettingsButton(view: viewController)
             navigationController.pushViewController(viewController, animated: true)
         case .settings:
-            let viewController = SettingsViewController(settings: dependencies.settings)
-            viewController.delegate = self
+            let viewController = SettingsViewController(settings: dependencies.settings) { language in
+                self.dependencies.settings.setLanguage(language: language)
+            }
             viewController.title = "Settings"
             navigationController.pushViewController(viewController, animated: true)
         }
@@ -68,18 +74,5 @@ class ArticleListCoordinator: Coordinator {
 
     @objc func settingsButtonPressed() {
         navigate(to: .settings)
-    }
-}
-
-extension ArticleListCoordinator: ArticleListViewControllerDelegate {
-    func viewArticle(row: Int) {
-        currentArticle = self.dependencies.dataProvider.articles.value[row]
-        navigate(to: .selectedArticle)
-    }
-}
-
-extension ArticleListCoordinator: SettingsViewControllerDelegate {
-    func selectedLanguage(language: Languages) {
-        dependencies.settings.setLanguage(language: language)
     }
 }
