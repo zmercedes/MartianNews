@@ -8,18 +8,14 @@
 
 import UIKit
 
-protocol ArticleListViewControllerDelegate: class {
-    func viewArticle(row: Int)
-}
-
 class ArticleListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    private let viewArticle: ((Int) -> Void)
     var setupTable: (() -> Void)?
 
-    weak var delegate: ArticleListViewControllerDelegate?
-
-    init(dataSource: ArticleListDataSource) {
+    init(dataSource: ArticleListDataSource, viewArticle: @escaping ((Int) -> Void)) {
+        self.viewArticle = viewArticle
         super.init(nibName: nil, bundle: nil)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         setupTable = {
@@ -43,7 +39,7 @@ class ArticleListViewController: UIViewController {
 
 extension ArticleListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.viewArticle(row: indexPath.row)
+        viewArticle(indexPath.row)
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }

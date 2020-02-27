@@ -8,23 +8,20 @@
 
 import UIKit
 
-protocol SettingsViewControllerDelegate: class {
-    func selectedLanguage(language: Languages)
-}
-
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var instructionLabel: UILabel!
     @IBOutlet weak var languagePickerView: UIPickerView!
 
-    weak var delegate: SettingsViewControllerDelegate?
+    private let setLanguage: ((Languages) -> Void)
 
     var setupView: (() -> Void)?
     var language: Languages
     private var disposeBag = DisposeBag()
 
-    init(settings: Settings) {
+    init(settings: Settings, setLanguage: @escaping ((Languages) -> Void)) {
         language = settings.language.value
+        self.setLanguage = setLanguage
         super.init(nibName: nil, bundle: nil)
         setupView = { [unowned self] in
             settings.language.observe { newLang in
@@ -46,7 +43,7 @@ class SettingsViewController: UIViewController {
 
     @IBAction func selectButtonPressed(_ sender: Any) {
         let lang = Languages.allCases[languagePickerView.selectedRow(inComponent: 0)]
-        delegate?.selectedLanguage(language: lang)
+        setLanguage(lang)
     }
 
 }
@@ -57,7 +54,7 @@ extension SettingsViewController: UIPickerViewDelegate {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        print("doing")
+
         self.view.endEditing(true)
         var lang = Languages.allCases[row].make()
         if lang == language.make() {
