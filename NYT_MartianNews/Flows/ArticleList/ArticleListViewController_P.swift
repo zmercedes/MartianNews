@@ -34,12 +34,12 @@ class ArticleListViewController_P: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.backgroundColor = .groupTableViewBackground
-        view.addSubview(tableView)
-        self.dataSource.tableView = self.tableView
-        tableView.register(ArticleListCell.self)
+        tableView.register(ArticleListCell_P.self)
         tableView.dataSource = self.dataSource
+        self.dataSource.myTableView = self.tableView
         tableView.delegate = self
-        
+        view.addSubview(tableView)
+
         let guide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 4),
@@ -54,5 +54,9 @@ extension ArticleListViewController_P: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewArticle(indexPath.row)
         tableView.deselectRow(at: indexPath, animated: false)
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 167
     }
 }

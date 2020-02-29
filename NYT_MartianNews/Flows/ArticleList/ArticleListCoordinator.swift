@@ -34,7 +34,7 @@ class ArticleListCoordinator: Coordinator {
 
     func start() {
         print("navigated to Article List")
-        let viewController = ArticleListViewController(dataSource: self.dataSource) { row in
+        let viewController = ArticleListViewController_P(dataSource: self.dataSource) { row in
             self.currentArticle = self.dependencies.dataProvider.articles.value[row]
         }
         viewController.title = "The Martian News"

@@ -10,7 +10,7 @@ import UIKit
 
 class ArticleListDataSource: NSObject, UITableViewDataSource {
 
-    weak var tableView: UITableView?
+    weak var myTableView: UITableView?
     private var articles: [Article] = [] {
         didSet {
             reload()
@@ -34,7 +34,7 @@ class ArticleListDataSource: NSObject, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article = articles[indexPath.row]
-        let cell: ArticleListCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
+        let cell: ArticleListCell_P = tableView.dequeueReusableCell(forIndexPath: indexPath)
         cell.title.text = article.title[language!]
         cell.preview.text = article.body[language!]
         if let image = imageCache.getImage(url: article.imageURL) {
@@ -55,7 +55,7 @@ class ArticleListDataSource: NSObject, UITableViewDataSource {
 
     private func reload() {
         DispatchQueue.main.async {
-            self.tableView?.reloadData()
+            self.myTableView?.reloadData()
         }
     }
 
